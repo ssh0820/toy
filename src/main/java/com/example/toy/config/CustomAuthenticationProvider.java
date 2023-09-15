@@ -75,8 +75,4 @@ public class CustomAuthenticationProvider implements AuthenticationProvider, Mes
             throw e;
         }
     }
-
-    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
-
-    }
 }

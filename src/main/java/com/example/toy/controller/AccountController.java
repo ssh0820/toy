@@ -1,8 +1,6 @@
 package com.example.toy.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -12,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequiredArgsConstructor
-@ComponentScan(basePackages = "com")
-@SpringBootApplication(scanBasePackages = {"com.example.toy"})
 public class AccountController {
 
     @GetMapping("/login")

@@ -39,7 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .mvcMatchers("/", "/login", "/signup").permitAll()
                 .mvcMatchers("/admin").hasRole("ADMIN")
-                .anyRequest().authenticated();
+                .anyRequest().authenticated()
+                .and()
+                .csrf().disable();
 
         // 폼 로그인
         http.formLogin()
@@ -89,7 +91,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public CustomAuthenticationProvider customAuthenticationProvider() {
         CustomAuthenticationProvider customAuthenticationProvider = new CustomAuthenticationProvider();
-        customAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        //customAuthenticationProvider.setPasswordEncoder(passwordEncoder());
         return customAuthenticationProvider;
     }
 
